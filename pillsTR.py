@@ -28,7 +28,7 @@ import json
 credentials_dict = json.loads(st.secrets["GOOGLE_APPLICATION_CREDENTIALS_JSON"])
 
 credentials = Credentials.from_service_account_info(credentials_dict)
-
+st.write(credentials)
 client = vision.ImageAnnotatorClient(credentials=credentials)
 
 df= pd.read_csv("pillsTR.csv")

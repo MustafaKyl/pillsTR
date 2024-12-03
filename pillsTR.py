@@ -25,7 +25,7 @@ credentials = st.secrets["GOOGLE_APPLICATION_CREDENTIALS_JSON"]
 
 client = vision.ImageAnnotatorClient(credentials=credentials)
 
-df= pd.read_csv("internship_datasets/pillsTR.csv")
+df= pd.read_csv("pillsTR.csv")
 df = df.iloc[:, 1:]
 
 downloadImage = st.file_uploader("Resim Yükleyiniz")

@@ -20,9 +20,8 @@ import re
 #df.to_csv("internship_datasets/pillsTR.csv")
 
 
-credentials = Credentials.from_service_account_file("pillpurpose-cd819248ee89.json")
 
-#credentials = st.secrets["GOOGLE_APPLICATION_CREDENTIALS_JSON"]
+credentials = st.secrets["GOOGLE_APPLICATION_CREDENTIALS_JSON"]
 
 client = vision.ImageAnnotatorClient(credentials=credentials)
 

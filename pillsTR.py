@@ -106,8 +106,7 @@ if downloadImage is not None:
         (df["İlaç Adı"].apply(lambda x: x.split()[0].lower() in text.lower()))
         ].iloc[0]
 
-    st.write(pillName)
-    st.write(text)
+
     pillName = pillName.str.replace(" ", "-")
     side_effects = get_side_effects(pillName[0])
 

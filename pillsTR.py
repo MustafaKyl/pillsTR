@@ -6,6 +6,10 @@ import streamlit as st
 import requests
 from bs4 import BeautifulSoup
 import re
+import json
+
+
+
 
 #df = pd.read_excel("internship_datasets/pillListTR.xlsx")
 #df.head()
@@ -21,7 +25,9 @@ import re
 
 
 
-credentials = st.secrets["GOOGLE_APPLICATION_CREDENTIALS_JSON"]
+credentials_dict = json.loads(st.secrets["GOOGLE_APPLICATION_CREDENTIALS_JSON"])
+
+credentials = Credentials.from_service_account_info(credentials_dict)
 
 client = vision.ImageAnnotatorClient(credentials=credentials)
 
